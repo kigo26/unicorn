@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "Review": {
+      "title": "Review",
+      "description": "A review for a product",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "rating": { "type": "number" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["productId", "authorId", "authorName", "rating", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/Review" },
+      "description": "Reviews left by users for products"
+    }
+  }
+}
